@@ -1,0 +1,28 @@
+{% extends "marketplace.html" %}
+
+{% block content %}
+
+    <form class="form-inline nav-searchbar" action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <input class="form-control" type="search" placeholder="Search projects" aria-label="Search" id="search" name="search" maxlength="200">
+        <button class="btn" type="submit"><i class="bi bi-search"></i></button>
+    </form>
+
+
+    <div class="card-container container-fluid" action="" method="post" novalidate>
+        <div class="row">
+            {% for sc in showcases %}
+            <div class="col-lg-4 market-card-wrapper">
+                <div class="card">
+                    <img src="{{file_prefix}}{{ sc.image }}" alt="">
+                    <div class="card-content">
+                        <h2>{{ sc.name }}</h2>
+                        <p>{{ sc.description_short }}</p>
+                        <a class="card-btn" href="{{sc.blog_url}}">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

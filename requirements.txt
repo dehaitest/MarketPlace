@@ -1,0 +1,8 @@
+flask-migrate
+flask-sqlalchemy
+flask-wtf
+flask
+pymysql
+faiss-cpu
+sentence-transformers
+python-dotenv
